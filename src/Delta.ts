@@ -1,6 +1,6 @@
-import * as diff from 'fast-diff';
-import cloneDeep = require('lodash.clonedeep');
-import isEqual = require('lodash.isequal');
+import diff from 'fast-diff';
+import cloneDeep from './cloneDeep';
+import deepEqual from './deepEqual';
 import AttributeMap from './AttributeMap';
 import Op from './Op';
 import OpIterator from './OpIterator';
@@ -132,7 +132,7 @@ class Delta {
           return this;
         }
       }
-      if (isEqual(newOp.attributes, lastOp.attributes)) {
+      if (deepEqual(newOp.attributes, lastOp.attributes)) {
         if (
           typeof newOp.insert === 'string' &&
           typeof lastOp.insert === 'string'
@@ -307,7 +307,7 @@ class Delta {
           // Optimization if rest of other is just retain
           if (
             !otherIter.hasNext() &&
-            isEqual(delta.ops[delta.ops.length - 1], newOp)
+            deepEqual(delta.ops[delta.ops.length - 1], newOp)
           ) {
             const rest = new Delta(thisIter.rest());
             return delta.concat(rest).chop();
@@ -377,7 +377,7 @@ class Delta {
             );
             const thisOp = thisIter.next(opLength);
             const otherOp = otherIter.next(opLength);
-            if (isEqual(thisOp.insert, otherOp.insert)) {
+            if (deepEqual(thisOp.insert, otherOp.insert)) {
               retDelta.retain(
                 opLength,
                 AttributeMap.diff(thisOp.attributes, otherOp.attributes),

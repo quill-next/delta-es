@@ -1,5 +1,5 @@
-import cloneDeep = require('lodash.clonedeep');
-import isEqual = require('lodash.isequal');
+import cloneDeep from './cloneDeep';
+import deepEqual from './deepEqual';
 
 interface AttributeMap {
   [key: string]: unknown;
@@ -47,7 +47,7 @@ namespace AttributeMap {
     const attributes = Object.keys(a)
       .concat(Object.keys(b))
       .reduce<AttributeMap>((attrs, key) => {
-        if (!isEqual(a[key], b[key])) {
+        if (!deepEqual(a[key], b[key])) {
           attrs[key] = b[key] === undefined ? null : b[key];
         }
         return attrs;
