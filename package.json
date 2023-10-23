@@ -1,11 +1,11 @@
 {
   "name": "quill-delta-es",
-  "version": "5.2.3",
+  "version": "5.2.4",
   "description": "The es module port of quill delta",
   "author": "Vincent Chan <okcdz@diverse.space>",
   "homepage": "https://github.com/vincentdchan/delta-es",
   "main": "dist/Delta.js",
-  "type": "module",
+  "type": "commonjs",
   "dependencies": {
     "fast-diff": "^1.3.0",
     "lodash-es": "^4.17.21"
