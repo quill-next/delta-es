@@ -5,7 +5,7 @@
     "sourceMap": true,
     "strict": true,
     "target": "ESNext",
-    "module": "ESNext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "strictNullChecks": true,
