@@ -1,6 +1,6 @@
 {
   "name": "quill-delta-es",
-  "version": "5.2.0",
+  "version": "5.2.1",
   "description": "The es module port of quill delta",
   "author": "Vincent Chan <okcdz@diverse.space>",
   "homepage": "https://github.com/vincentdchan/delta-es",
