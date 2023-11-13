@@ -1,6 +1,6 @@
 {
   "name": "quill-delta-es",
-  "version": "5.2.7",
+  "version": "5.2.8",
   "description": "The es module port of quill delta",
   "author": "Vincent Chan <okcdz@diverse.space>",
   "homepage": "https://github.com/vincentdchan/delta-es",
@@ -41,7 +41,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "tsc --project tsconfig.esm.json & tsc --project tsconfig.cjs.json && esbuild --bundle dist/cjs/Delta.js --outfile=dist/cjs/Delta.cjs --format=cjs --platform=node --sourcemap",
+    "build": "tsc --project tsconfig.esm.json && esbuild --bundle dist/esm/Delta.js --outfile=dist/cjs/Delta.cjs --format=cjs --platform=node --sourcemap",
     "prepare": "npm run build",
     "lint": "eslint 'src/**/*.ts'",
     "test": "vitest",
