@@ -1,6 +1,6 @@
 {
   "name": "quill-delta-es",
-  "version": "5.2.6",
+  "version": "5.2.7",
   "description": "The es module port of quill delta",
   "author": "Vincent Chan <okcdz@diverse.space>",
   "homepage": "https://github.com/vincentdchan/delta-es",
@@ -9,7 +9,7 @@
   "types": "./dist/types/Delta.d.ts",
   "exports": {
     "import": "./dist/esm/Delta.js",
-    "require": "./dist/cjs/Delta.js",
+    "require": "./dist/cjs/Delta.cjs",
     "default": "./dist/esm/Delta.js"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
     "@typescript-eslint/eslint-plugin": "^5.14.0",
     "@typescript-eslint/parser": "^5.14.0",
     "@vitest/coverage-c8": "^0.22.1",
+    "esbuild": "^0.19.5",
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -40,7 +41,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "tsc --project tsconfig.esm.json & tsc --project tsconfig.cjs.json",
+    "build": "tsc --project tsconfig.esm.json & tsc --project tsconfig.cjs.json && esbuild --bundle dist/cjs/Delta.js --outfile=dist/cjs/Delta.cjs --format=cjs --platform=node --sourcemap",
     "prepare": "npm run build",
     "lint": "eslint 'src/**/*.ts'",
     "test": "vitest",
