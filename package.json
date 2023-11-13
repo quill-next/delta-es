@@ -1,11 +1,17 @@
 {
   "name": "quill-delta-es",
-  "version": "5.2.4",
+  "version": "5.2.5",
   "description": "The es module port of quill delta",
   "author": "Vincent Chan <okcdz@diverse.space>",
   "homepage": "https://github.com/vincentdchan/delta-es",
   "main": "dist/Delta.js",
-  "type": "commonjs",
+  "type": "module",
+  "types": "./dist/esm/Delta.d.ts",
+  "exports": {
+    "import": "./dist/esm/Delta.js",
+    "require": "./dist/cjs/Delta.js",
+    "default": "./dist/esm/Delta.js"
+  },
   "dependencies": {
     "fast-diff": "^1.3.0",
     "lodash-es": "^4.17.21"
@@ -34,7 +40,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --project tsconfig.esm.json & tsc --project tsconfig.cjs.json",
     "prepare": "npm run build",
     "lint": "eslint 'src/**/*.ts'",
     "test": "vitest",
