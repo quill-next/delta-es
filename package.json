@@ -1,13 +1,13 @@
 {
   "name": "quill-delta-es",
-  "version": "5.2.8",
+  "version": "5.2.9",
   "description": "The es module port of quill delta",
   "author": "Vincent Chan <okcdz@diverse.space>",
   "homepage": "https://github.com/vincentdchan/delta-es",
   "main": "dist/Delta.js",
   "type": "module",
-  "types": "./dist/types/Delta.d.ts",
   "exports": {
+    "types": "./dist/types/Delta.d.ts",
     "import": "./dist/esm/Delta.js",
     "require": "./dist/cjs/Delta.cjs",
     "default": "./dist/esm/Delta.js"
