@@ -1,6 +1,6 @@
 {
   "name": "@quill-next/delta-es",
-  "version": "5.2.11",
+  "version": "5.2.12",
   "description": "The es module port of quill delta",
   "author": "Vincent Chan <okcdz@diverse.space>",
   "homepage": "https://github.com/quill-next/delta-es",
@@ -68,10 +68,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/quilljs/delta"
+    "url": "https://github.com/quill-next/delta-es"
   },
   "bugs": {
-    "url": "https://github.com/quilljs/delta/issues"
+    "url": "https://github.com/quill-next/delta-es/issues"
   },
   "keywords": [
     "rich text",
