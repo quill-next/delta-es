@@ -8,9 +8,14 @@
   "types": "dist/types/Delta.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/types/Delta.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": {
+        "types": "./dist/types/Delta.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/types/Delta.d.ts",
+        "default": "./dist/index.js"
+      }
     }
   },
   "dependencies": {
