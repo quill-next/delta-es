@@ -56,7 +56,7 @@ class Delta {
 
   ops: Op[];
   inverted?: Delta;
-  constructor(ops?: Op[] | { ops: Op[], inverted?: Delta }) {
+  constructor(ops?: Op[] | { ops: Op[]; inverted?: Delta }) {
     // Assume we are given a well formed ops
     if (Array.isArray(ops)) {
       this.ops = ops;
