@@ -6,17 +6,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
         with:
-          node-version: 16
-      - run: npm ci
-      - run: npm run lint
-      - run: npm test
-      - run: npm run test:coverage
-      - run: npm run test:coverage:report
-      - name: Coveralls
-        uses: coverallsapp/github-action@1.1.3
+          version: 10
+      - uses: actions/setup-node@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+      - run: pnpm run lint
+      - run: pnpm run build
+      - run: pnpm test --run

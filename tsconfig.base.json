@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "strict": true,
+    "lib": ["ESNext"],
     "allowSyntheticDefaultImports": true,
     "strictNullChecks": true,
     "noErrorTruncation": true,
