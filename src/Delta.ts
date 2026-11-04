@@ -4,6 +4,7 @@ import deepEqual from './deepEqual';
 import AttributeMap from './AttributeMap';
 import Op from './Op';
 import OpIterator from './OpIterator';
+import type CursorInfo from './CursorInfo';
 
 const NULL_CHARACTER = String.fromCharCode(0); // Placeholder char for embed in diff()
 
@@ -338,7 +339,7 @@ class Delta {
     return delta;
   }
 
-  diff(other: Delta, cursor?: number | diff.CursorInfo): Delta {
+  diff(other: Delta, cursor?: number | CursorInfo): Delta {
     if (this.ops === other.ops) {
       return new Delta();
     }
@@ -568,6 +569,8 @@ class Delta {
 export default Delta;
 
 export { Op, OpIterator, AttributeMap };
+
+export type { CursorInfo };
 
 if (typeof module === 'object') {
   module.exports = Delta;

@@ -7,6 +7,7 @@ This is a forked version to quill-delta. There are some differences between the 
 - This is a es version for tree shaking.
 - The unit tests are rewritten using Vitest.
 - `lodash` is removed from the dependencies. (5kb less after minified + gzipped)
+- `fast-diff` is bundled into `dist`, so the package has no runtime dependencies.
 
 ## Origin
 
